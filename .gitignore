@@ -1,0 +1,6 @@
+# Ignore saved passwords file
+saved_passwords.txt
+
+# Ignore Python cache
+__pycache__/
+*.pyc
