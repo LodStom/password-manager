@@ -1,0 +1,2 @@
+pyperclip
+# (Only external dependency is pyperclip — Tkinter is built into Python.)

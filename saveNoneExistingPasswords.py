@@ -1,8 +1,8 @@
 import os
 from datetime import datetime
 
-def save_password_unique(password, filename="saved_passwords.txt"):
-    label = input("What is this password for? (e.g., Gmail, Facebook): ").strip()
+def save_password_unique(password, label, filename="saved_passwords.txt"):
+
     # Read existing passwords into a set for fast lookup
     existing_passwords = set()
     if os.path.exists(filename):
@@ -17,10 +17,12 @@ def save_password_unique(password, filename="saved_passwords.txt"):
                 existing_passwords.add(parts[0])
 
     if password in existing_passwords:
-        print("⚠️ Password already saved. Not saving duplicate.")
+        return "⚠️ Password already saved."
+
     else:
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         with open(filename, "a") as file:
             file.write(f"{password}  ({timestamp}) for {label}\n")
-        print(f"✅ Password saved to {filename}")
+
+        return "✅ Password saved successfully."
 

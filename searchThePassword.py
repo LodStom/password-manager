@@ -1,18 +1,14 @@
 import os
 
-def search_password():
-    if not os.path.exists("saved_passwords.txt"):
-        print("❌ No saved passwords found.")
-        return
+FILENAME = "saved_passwords.txt"
 
-    label = input("Enter a keyword to search for: ").strip()
-    found = False
-
-    with open("saved_passwords.txt", "r") as file:
+def search_password(term):
+    matches = []
+    if not os.path.exists(FILENAME):
+        return matches
+    term = term.lower().strip()
+    with open(FILENAME, "r") as file:
         for line in file:
-            if label.lower() in line.lower():  # Case-insensitive match
-                print(line.strip())
-                found = True
-
-    if not found:
-        print("❌ No matching passwords found.")
+            if term in line.lower():
+                matches.append(line.strip())
+    return matches
