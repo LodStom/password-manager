@@ -1,6 +1,12 @@
+# Ignore PyInstaller build folders
+build/
+dist/
+
+# Ignore PyInstaller spec file
+*.spec
+
+# Ignore generated executable files
+*.exe
+
 # Ignore saved passwords file
 saved_passwords.txt
-
-# Ignore Python cache
-__pycache__/
-*.pyc
