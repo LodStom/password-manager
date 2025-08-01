@@ -1,16 +1,24 @@
-# Ignore PyInstaller build folders
+## Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyInstaller build folders
 build/
 dist/
 
-# Ignore PyInstaller spec file
+# PyInstaller spec file
 *.spec
 
-# Ignore generated executable files
+# Executable files
 *.exe
 
-# Ignore saved passwords file
+# Saved passwords file (keep private)
 saved_passwords.txt
 
-# Ignore Python cache files
-__pycache__/
-*.py[cod]
+# VS Code workspace settings
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
